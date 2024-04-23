@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# script that creates an ssh key_pair with RSA algorithm encription of 4096 length
+
+ssh-keygen -t rsa -b 4096 -f school -N betty
