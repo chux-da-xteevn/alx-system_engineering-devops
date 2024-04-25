@@ -1,7 +1,7 @@
-# installing a flask
-# version 2.1.0 mandated
+# install a flask package
+# version 2.1.0
 
 $package_name = 'flask'
 package { $package_name:
-	ensure => '2.1.0',
+    ensure   => '2.1.0' ,
 }
