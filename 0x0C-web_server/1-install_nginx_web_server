@@ -2,12 +2,18 @@
 # Requirements:
 #install nginx on your webserver, configure nginx to run on port 80.
 
-apt-get -y update
-apt-get -y install nginx
+# Install Nginx
+apt-get update
+apt-get install -y nginx
 
-ufw allow 'Nginx HTTP'
-echo "Hello World!" > /var/www/html/index.html
+# Start Nginx service
 service nginx start
 
+# Configure Nginx to listen on port 80
+sed -i 's/^.*listen.*$/\tlisten 80 default_server;/g' /etc/nginx/sites-available/default
 
+# Reload Nginx configuration
+service nginx reload
 
+# Create index.html with "Hello World!"
+echo "Hello World!" > /var/www/html/index.html
